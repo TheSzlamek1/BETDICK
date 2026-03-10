@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>SlimBet</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">SlimBet</div>
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+<a href="login.html">Login</a>
+<a href="register.html">Register</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h1>Witaj w SlimBet ⚽</h1>
+<p>Strona bukmacherska dla zabawy</p>
+
+<div id="userPanel"></div>
+
+</div>
+
+<script>
+
+let logged=localStorage.getItem("logged")
+
+if(logged){
+
+document.getElementById("userPanel").innerHTML=
+`
+<h2>Zalogowany jako ${logged}</h2>
+<button onclick="logout()">Wyloguj</button>
+`
+
+}
+
+function logout(){
+
+localStorage.removeItem("logged")
+location.reload()
+
+}
+
+</script>
+
+</body>
+</html>
