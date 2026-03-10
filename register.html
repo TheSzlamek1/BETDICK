@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Register</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="box">
+
+<h2>Rejestracja</h2>
+
+<input id="username" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="register()">Zarejestruj</button>
+
+<p id="msg"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function register(){
+
+let username=document.getElementById("username").value
+let password=document.getElementById("password").value
+
+let users=JSON.parse(localStorage.getItem("users")) || []
+
+users.push({
+username:username,
+password:password,
+balance:1000
+})
+
+localStorage.setItem("users",JSON.stringify(users))
+
+document.getElementById("msg").innerText="Konto utworzone!"
+
+}
+
+</script>
+
+</body>
+</html>
